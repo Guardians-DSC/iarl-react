@@ -3,7 +3,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faUser, faUnlock } from '@fortawesome/fontawesome-free-solid';
 import './LoginForm.css';
 import client from '../../modules/httpClient';
-import Alert from '../common/Alert';
+import { withAlert } from 'react-alert'
 
 class Login extends Component {
     
@@ -12,8 +12,7 @@ class Login extends Component {
 
         this.state = {
             username: "",
-            password: "",
-            showAlert: ""
+            password: ""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,9 +25,7 @@ class Login extends Component {
             console.log(res.data.token);
         })
         .catch((err) => {
-            this.setState({
-                showAlert: err.response.data.error
-            })
+            this.props.alert.show(err.response.data.error, { type: 'error' });
         })
 
         event.preventDefault();
@@ -46,7 +43,6 @@ class Login extends Component {
     render() {
         return (
             <div>
-                { this.state.showAlert ? <Alert text={this.state.showAlert} /> : null }
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <div className="input-group">
@@ -92,4 +88,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withAlert(Login);
