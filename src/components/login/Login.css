@@ -1,5 +1,5 @@
 .Login {
-    background-image: url("../../images/login.jpg"); 
+    background-image: linear-gradient(to right bottom, #00296b, #003793); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
