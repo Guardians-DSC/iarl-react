@@ -11,7 +11,10 @@ button {
     margin-bottom: 1.3rem;
 }
 
+a {
+    color: lightblue;
+}
 a:hover {
-    color: #fff;
+    color: lightcoral;
     text-decoration: none;
 }
