@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from '@material-ui/core/Button';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faUser, faUnlock } from '@fortawesome/fontawesome-free-solid';
 import './LoginForm.css';
@@ -77,7 +78,7 @@ class Login extends Component {
                         </div>
                     </div>
 
-                    <button onClick={this.handleClick} className="btn btn-dark btn-block">Login</button>
+                    <Button onClick={this.handleClick} variant="contained" color="primary" className="btn-block">Login</Button>
                 </form>
 
                 <div className="d-flex justify-content-center">
